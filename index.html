@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-br"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Calculadora de Escalas</title> 
+  <link rel="stylesheet" href="style.css"> 
+  <script src="script.js" defer></script> 
+ <style type="text/css" id="dcoder_stylesheet">body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000000; /* Cor do fundo geral da página */
+  color: #ffffff; /* Cor do texto geral */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333; /* Cor de fundo do cabeçalho */
+  color: #4CAF50; /* Cor do texto no cabeçalho */
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff; /* Cor do título principal */
+}
+
+.navigation {
+  margin-top: 1em;
+}
+
+.navigation button {
+  background-color: #4CAF50; /* Cor de fundo dos botões de navegação */
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navigation button:hover {
+  background-color: #45a049; /* Cor de fundo ao passar o mouse */
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: #333; /* Cor de fundo das seções */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #ffffff; /* Cor dos títulos das seções */
+  text-align: center;
+}
+
+#conversion {
+  background-color: #333; /* Cor de fundo da seção Conversão */
+  color: #fff; /* Cor do texto na seção Conversão */
+  padding: 2em;
+  border-radius: 5px;
+  text-align: center; /* Centraliza o texto */
+}
+
+#conversion h2 {
+  color: #ffffff; /* Cor do título da seção Conversão */
+}
+
+#conversion .button-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+#conversion button {
+  background-color: #4CAF50; /* Cor de fundo dos botões na seção Conversão */
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#conversion button:hover {
+  background-color: #45a049; /* Cor de fundo ao passar o mouse nos botões */
+}
+
+#result {
+  margin-top: 1em;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ff5722; /* Cor do texto destacado */
+}
+
+.explanation,
+.contextualization,
+.support {
+  margin-top: 2em;
+  background-color: #333; /* Cor de fundo das seções adicionais */
+  color: #ffffff; /* Cor do texto nas seções adicionais */
+  padding: 1em;
+}
+
+.qr-code-container {
+  text-align: center;
+  margin-top: 1em;
+}
+
+#qrcode {
+  max-width: 200px;
+  height: auto;
+}
+
+footer {
+  background-color: #333; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto no rodapé */
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #4CAF50; /* Cor do link do e-mail no rodapé */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Seção Apoie */
+#support {
+  text-align: center; /* Centraliza o texto na seção Apoie */
+  background-color: #333; /* Cor de fundo opcional */
+  color: #ffffff; /* Cor do texto opcional */
+  padding: 2em;
+  border-radius: 5px;
+}
+
+#support h2 {
+  color: #ffffff; /* Cor do título da seção Apoie */
+}
+
+#support p {
+  margin: 0 auto; /* Margem automática para centralizar o texto */
+}
+
+.qr-code-container {
+  text-align: center; /* Centraliza o QR Code dentro da seção Apoie */
+  margin-top: 1em;
+}
+
+#qrcode {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Seção Como Usar o Site */
+#howToUse {
+  text-align: center; /* Centraliza o texto na seção Como Usar o Site */
+  background-color: #333; /* Cor de fundo opcional */
+  color: #ffffff; /* Cor do texto opcional */
+  padding: 2em;
+  border-radius: 5px;
+}
+
+#howToUse h2 {
+  color: #ffffff; /* Cor do título da seção Como Usar o Site */
+}
+
+#howToUse p {
+  margin: 0 auto; /* Margem automática para centralizar o texto */
+}
+
+/* Estilo para o campo de entrada de número na seção Conversão */
+#conversion input[type="number"] {
+  width: 80px; /* Ajuste o tamanho conforme necessário */
+  height: 20px; /* Ajuste o tamanho conforme necessário */
+  font-size: 16px; /* Tamanho da fonte para melhor visualização */
+  padding: 10px; /* Espaçamento interno */
+  border: 2px solid #4CAF50; /* Cor e espessura da borda */
+  border-radius: 5px; /* Cantos arredondados, se desejado */
+  background-color: #444; /* Cor de fundo do campo */
+  color: #ffffff; /* Cor do texto no campo */
+}</style></head> 
+ <body> 
+  <header> 
+   <h1>Calculadora de Escalas</h1> 
+   <div class="navigation"> <button onclick="scrollToSection('conversion')">Converter</button> <button onclick="scrollToSection('howToUse')">Como Usar</button> <button onclick="scrollToSection('contextualization')">História</button> <button onclick="scrollToSection('support')">Apoie</button> <button onclick="scrollToSection('footer')">Contato</button> 
+   </div> 
+  </header> 
+  <div id="conversion" class="container"> 
+   <h2>Converter Temperatura</h2> <label for="tempInput">Digite a temperatura:</label> 
+   <input type="number" id="tempInput" placeholder="Ex: 25"> 
+   <div class="button-container"> <button onclick="convert('C')">Celsius</button> <button onclick="convert('F')">Fahrenheit</button> <button onclick="convert('K')">Kelvin</button> 
+   </div> 
+   <p id="result"></p> 
+  </div> 
+  <div id="howToUse" class="container explanation"> 
+   <h2>Como Usar</h2> 
+   <p>Digite a temperatura no campo fornecido e clique em um dos botões para converter a temperatura para a escala desejada. O resultado da conversão será exibido abaixo dos botões.</p> 
+  </div> 
+  <div id="contextualization" class="container contextualization"> 
+   <h2>Contexto Histórico</h2> 
+   <p><strong>Escala Celsius (°C):</strong> Criada por Anders Celsius em 1742, a escala Celsius é baseada no ponto de congelamento da água a 0 °C e no ponto de ebulição a 100 °C, sob pressão atmosférica normal.</p> 
+   <p><strong>Escala Fahrenheit (°F):</strong> Desenvolvida por Daniel Gabriel Fahrenheit em 1724, a escala Fahrenheit define o ponto de congelamento da água a 32 °F e o ponto de ebulição a 212 °F, sob pressão atmosférica normal.</p> 
+   <p><strong>Escala Kelvin (K):</strong> Proposta por William Thomson (Lord Kelvin) em 1848, a escala Kelvin é usada principalmente em ciência e define o zero absoluto (0 K) como a temperatura mais baixa possível, onde as partículas têm mínima energia térmica. A escala Kelvin é uma extensão da escala Celsius, com a diferença de que 0 K é igual a -273,15 °C.</p> 
+   <p><strong>Conversões:</strong></p> 
+   <ul> 
+    <li>De Celsius para Fahrenheit: (°C * 9/5) + 32</li> 
+    <li>De Celsius para Kelvin: °C + 273.15</li> 
+    <li>De Fahrenheit para Celsius: (°F - 32) * 5/9</li> 
+    <li>De Fahrenheit para Kelvin: (°F - 32) * 5/9 + 273.15</li> 
+    <li>De Kelvin para Celsius: K - 273.15</li> 
+    <li>De Kelvin para Fahrenheit: (K - 273.15) * 9/5 + 32</li> 
+   </ul> 
+  </div> 
+  <div id="support" class="container support"> 
+   <h2>Apoie</h2> 
+   <p>Caso você tenha achado útil e possa contribuir para futuros projetos, leia o QR CODE abaixo:</p> 
+   <div class="qr-code-container"> 
+    <img id="qrcode" src="qrcode.png" alt="QRCode para doação"> 
+   </div> 
+  </div> 
+  <footer id="footer"> 
+   <p>Para mais informações, entre em contato: <a href="mailto:contato.danilogsantos@gmail.com">contato.danilogsantos@gmail.com</a></p> 
+  </footer> 
+ 
+<script type="text/javascript" id="dcoder_script">// Função para rolar até a seção correspondente ao clicar em um botão de navegação
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Função para conversão de temperatura
+function convert(scale) {
+    const temp = parseFloat(document.getElementById('tempInput').value);
+    let result = '';
+
+    if (isNaN(temp)) {
+        result = 'Por favor, insira um número válido.';
+    } else {
+        switch (scale) {
+            case 'C':
+                result = `Temperatura em Fahrenheit: <span class="highlight">${cpf(temp).toFixed(2)} °F</span><br>`;
+                result += `Temperatura em Kelvin: <span class="highlight">${cpk(temp).toFixed(2)} K</span>`;
+                break;
+            case 'F':
+                result = `Temperatura em Celsius: <span class="highlight">${fpc(temp).toFixed(2)} °C</span><br>`;
+                result += `Temperatura em Kelvin: <span class="highlight">${fpk(temp).toFixed(2)} K</span>`;
+                break;
+            case 'K':
+                result = `Temperatura em Celsius: <span class="highlight">${kpc(temp).toFixed(2)} °C</span><br>`;
+                result += `Temperatura em Fahrenheit: <span class="highlight">${kpf(temp).toFixed(2)} °F</span>`;
+                break;
+            default:
+                result = 'Escala inválida.';
+        }
+    }
+
+    document.getElementById('result').innerHTML = result;
+}
+
+// Funções de conversão de temperatura
+function cpf(c) {
+    return (c * 9 / 5) + 32;
+}
+
+function cpk(c) {
+    return c + 273.15;
+}
+
+function fpc(f) {
+    return (f - 32) * 5 / 9;
+}
+
+function fpk(f) {
+    return (f - 32) * 5 / 9 + 273.15;
+}
+
+function kpc(k) {
+    return k - 273.15;
+}
+
+function kpf(k) {
+    return (k - 273.15) * 9 / 5 + 32;
+}</script></body></html>
